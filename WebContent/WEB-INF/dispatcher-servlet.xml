@@ -15,7 +15,7 @@
        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 
-	   <context:component-scan base-package="controller" />
+	   <context:component-scan base-package="app" />
 	   
 	   <mvc:annotation-driven />
 

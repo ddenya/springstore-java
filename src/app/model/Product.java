@@ -1,25 +1,42 @@
-package model;
+package app.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "Product")
 public class Product {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String productId;
 	
+	@Column(name="productName")
 	private String productName;
-	private String productCategory;
-	private String productDescription;
-	private double productPrice;
-	private String productCondition;
-	private String productStatus;
-	private String productManufacturer;
 
+	@Column(name="productCategory")
+	private String productCategory;
+	
+	@Column(name="productDescription")
+	private String productDescription;
+	
+	@Column(name="productPrice")
+	private double productPrice;
+	
+	@Column(name="productCondition")
+	private String productCondition;
+	
+	@Column(name="productStatus")
+	private String productStatus;
+	
+	@Column(name="productManufacturer")
+	private String productManufacturer;
+	
+	@Column(name="unitInStock")
 	private int unitInStock;
 	
 	public String getProductId() {
@@ -78,6 +95,4 @@ public class Product {
 	public void setProductManufacturer(String productManufacturer) {
 		this.productManufacturer = productManufacturer;
 	}
-	
-	
 }

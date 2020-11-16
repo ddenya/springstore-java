@@ -18,14 +18,14 @@
     		<property name="hibernateProperties">
     			<props>
     				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
-    				<prop key="hibernate.hbm2dll.auto">update</prop>
+    				<prop key="hibernate.hbm2dll.auto">create</prop>
     				<prop key="hibernate.show_sql">true</prop>
     				<prop key="hibernate.format_sql">true</prop>
     			</props>
     		</property>
     		<property name="packagesToScan">
     			<list>
-    				<value>com.emusicstore</value>
+    				<value>app</value>
     			</list>
     		</property>
     	</bean>
@@ -33,4 +33,8 @@
     	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
     		<property name="sessionFactory" ref="sessionFactory" />
     	</bean>
+    	
+    	<!-- <bean id="productDao" class="dao.impl.ProductDaoImpl">
+            <property name="sessionFactory" ref="sessionFactory"/>
+    </bean> -->
 </beans>
