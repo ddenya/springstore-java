@@ -37,12 +37,32 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/productList/viewProduct/{productId}")
-	public String viewProduct(@PathVariable String productId, Model model) throws IOException{
+	public String viewProduct(@PathVariable int productId, Model model) throws IOException{
 		
 		Product product = productDao.getProductById(productId);
 		model.addAttribute("product", product);
 		
 		return "viewProduct";
 	}
+	
+	@RequestMapping("/admin")
+	public String adminPage() {
+		// Returning admin page view 
+		return "admin";
+	}
+	
+	@RequestMapping("/admin/productInventory")
+	public String productInventory(Model model) {
+		List<Product> products = productDao.getAllProducts();
+		model.addAttribute("products", products);
+		
+		return "productInventory";
+		
+	}
+	
+//	@RequestMapping("/admin/addProduct/")
+//		public String addProduct() {
+//			return "addProduct";
+//		}
 
 }
