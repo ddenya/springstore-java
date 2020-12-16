@@ -21,14 +21,16 @@ public class ProductDaoImpl implements ProductDao {
 	private SessionFactory sessionFactory;
 	
 	public void addProduct (Product product) {
+		
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(product);
 		
-		// Will be executed only if I flush it
+		// Always has to be flushed to execute statements.
 		session.flush();
 	}
 	
 	public Product getProductById(int id) {
+		
 		Session session = sessionFactory.getCurrentSession();
 		
 		// Needs always to be cast
@@ -38,6 +40,7 @@ public class ProductDaoImpl implements ProductDao {
 	}
 	
 	public List<Product> getAllProducts(){
+		
 		Session session = sessionFactory.getCurrentSession();
 		
 		Query query = session.createQuery("from Product");
@@ -50,8 +53,12 @@ public class ProductDaoImpl implements ProductDao {
 	}
 	
 	public void deleteProduct(int id) {
+		
 		Session session = sessionFactory.getCurrentSession();
+		
 		session.delete(getProductById(id));
+		
+		// Always has to be flushed to execute statements.
 		session.flush();
 	}
 }

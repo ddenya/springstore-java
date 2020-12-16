@@ -60,9 +60,19 @@ public class HomeController {
 		
 	}
 	
-//	@RequestMapping("/admin/addProduct/")
-//		public String addProduct() {
-//			return "addProduct";
-//		}
+	@RequestMapping("/admin/productInventory/addProduct")
+		public String addProduct(Model model) {
+		
+			Product productToAdd = new Product();
+			
+			// For default value of radiobuttons on addproduct page
+			productToAdd.setProductCategory("Musical Instrument");
+			productToAdd.setProductCondition("New");
+			productToAdd.setProductStatus("Active");
+			
+			model.addAttribute("product", productToAdd);
+			
+			return "addProduct";
+		}
 
 }
