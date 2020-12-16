@@ -11,7 +11,7 @@
 			</div>
 			
 			<!-- commandName = model  -->
-			<form:form action="#" method="post" commandName="product">
+			<form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post" commandName="product">
 			
 				<div class="form-group">
 					<label for="name">Name</label>
@@ -79,6 +79,11 @@
 						<form:radiobutton path="productStatus" id="status" value="hidden"/>
 						Hidden</label>					
 				</div>
+				
+				<br> 
+				<br>
+				<input type="submit" value="submit" class="btn btn-default">
+				<a href="<c:url value="/admin/productInventory" />" class="btn btn-default">Cancel</a>
 	
 			</form:form>
 			
