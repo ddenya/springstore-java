@@ -7,7 +7,7 @@
     	<div class="container">
     	
 			<div class="page-header">
-				<h1>Product Inventory Page</h1>
+			z		`	<h1>Product Inventory Page</h1>
 				<p class="lead">This is a product inventory</p>
 			</div>
 			

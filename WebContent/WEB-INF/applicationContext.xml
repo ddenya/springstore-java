@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <beans  xmlns="http://www.springframework.org/schema/beans"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     	xsi:schemaLocation="http://www.springframework.org/schema/beans
@@ -7,7 +8,7 @@
     	<!--  defines a driver for connection to database -->
     	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     		<property name="driverClassName" value="org.h2.Driver" /> 
-    		<property name="url" value="jdbc:h2:tcp://localhost/~/test" />
+    		<property name="url" value="jdbc:h2:~/Documents/java/4-jars/h2/test" />
     		<property name="username" value="sa"/>
     		<property name="password" value=""/>
     	</bean>

@@ -1,16 +1,18 @@
+<%@ include file="/WEB-INF/views/template/header.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ include file="/WEB-INF/views/template/header.jsp" %>
-
 
     <div class="container-wrapper">
-    	<div class="container">
-    	
+    	<div class="container">	
+    		<div class="empty-space">
+    			<br>
+    			<br>		
+    			<br>
+    		</div>
 			<div class="page-header">
 				<h1>All Products</h1>
 				<p class="lead">Checkout all the awesome products</p>
-			</div>
-			
+			</div>		
 			<table class="table table-stripped table-hover">
 				<thead>
 					<tr class="bg-success">
@@ -21,8 +23,7 @@
 						<th> Price </th>
 						<th></th>
 					</tr>
-				</thead>
-				
+				</thead>			
 				<c:forEach items="${products}" var="product">
 					<tr>
 						<td><img src="#" alt="image"/></td>
@@ -35,8 +36,6 @@
 					</tr>
 				</c:forEach>
 			</table>
-			
-			
 		</div>
 	</div>
 	

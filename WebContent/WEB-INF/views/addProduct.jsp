@@ -12,8 +12,7 @@
 			
 			<!-- commandName = model  -->
 			<form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post" commandName="product">
-			
-				<div class="form-group">
+			<div class="form-group">
 					<label for="name">Name</label>
 						<!--  path = attribute name of model which we are submitting -->
 						<form:input path="productName" id="name" class="form-Control" />
