@@ -7,7 +7,7 @@
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>emusicstore Maven Webapp</name>
-  <url>https://github.com/chechetov</url>
+  <url>github.com/chechetov</url>
   
   <dependencies>
   	<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
