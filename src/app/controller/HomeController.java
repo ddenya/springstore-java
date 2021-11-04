@@ -38,6 +38,8 @@ public class HomeController {
 		return "productList";
 	}
 	
+	///  I know what it is but I am desperate lol.. commit bump....
+	
 	@RequestMapping("/productList/viewProduct/{productId}")
 	public String viewProduct(@PathVariable int productId, Model model) throws IOException{
 		
