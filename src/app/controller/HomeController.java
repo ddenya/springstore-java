@@ -38,8 +38,6 @@ public class HomeController {
 		return "productList";
 	}
 	
-	///  I know what it is but I am desperate lol.. commit bump....
-	
 	@RequestMapping("/productList/viewProduct/{productId}")
 	public String viewProduct(@PathVariable int productId, Model model) throws IOException{
 		
@@ -79,7 +77,7 @@ public class HomeController {
 			return "addProduct";
 		}
 
-	// For adding product from addProduct.jspß
+	// For adding product from addProduct.jsp
 	@RequestMapping(value = "/admin/productInventory/addProduct", method = RequestMethod.POST)
 	public String addProductPost(@ModelAttribute("product") Product product) {
 		
