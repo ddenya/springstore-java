@@ -26,6 +26,7 @@
 	   
 	   <mvc:resources location="/WEB-INF/resources/" mapping="/resources/**" order="0"></mvc:resources>
 	   
+	   <!-- when adding annotation, hibernate will treat it as transaction -->
 	   <tx:annotation-driven />
 
 </beans>
