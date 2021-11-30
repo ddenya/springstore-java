@@ -7,10 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+// @Entity maps instance of an object to row in tale
 @Entity
 @Table(name = "Product")
 public class Product {
 	
+	// @Id defines primary key in a table
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int productId;

@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import app.dao.ProductDao;
 import app.model.Product;
 
+// If Spring sees "Repository" annotation, it will inject this class into Spring Container and treat as data repo
 @Repository
 @Transactional
 public class ProductDaoImpl implements ProductDao {
@@ -31,7 +32,7 @@ public class ProductDaoImpl implements ProductDao {
 	public Product getProductById(int id) {
 		
 		Session session = sessionFactory.getCurrentSession();
-		// Needs always to be cast
+		// Needs always to be cast - looking for a class with defined primary key
 		Product product = (Product) session.get(Product.class, id);
 		return product;
 	}

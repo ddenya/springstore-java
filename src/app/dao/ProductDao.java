@@ -1,7 +1,6 @@
 package app.dao;
 
 import java.util.List;
-
 import app.model.Product;
 
 public interface ProductDao {
