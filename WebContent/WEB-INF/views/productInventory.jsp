@@ -7,8 +7,8 @@
     	<div class="container">
     	
 			<div class="page-header">
-			z		`	<h1>Product Inventory Page</h1>
-				<p class="lead">This is a product inventory</p>
+				<h1>Product Inventory Page</h1>
+				<p class="lead">This is product inventory page</p>
 			</div>
 			
 			<table class="table table-stripped table-hover">
@@ -37,7 +37,6 @@
 			</table>			
 			
 			<a class="btn btn-primary" href="<spring:url value="/admin/productInventory/addProduct"/>">Add Product</a>
-			
 			
 		</div>
 	</div>

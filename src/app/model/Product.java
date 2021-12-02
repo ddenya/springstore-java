@@ -14,6 +14,7 @@ public class Product {
 	
 	// @Id defines primary key in a table
 	@Id
+	// Generate ProductId in sequence order
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int productId;
 	

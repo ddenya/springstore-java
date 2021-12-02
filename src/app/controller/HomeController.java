@@ -49,7 +49,7 @@ public class HomeController {
 	
 	@RequestMapping("/admin")
 	public String adminPage() {
-		// Returning admin page view 
+		// Returning admin page view, maps to admin.jsp
 		return "admin";
 	}
 	
@@ -57,9 +57,7 @@ public class HomeController {
 	public String productInventory(Model model) {
 		List<Product> products = productDao.getAllProducts();
 		model.addAttribute("products", products);
-		
 		return "productInventory";
-		
 	}
 	
 	@RequestMapping("/admin/productInventory/addProduct")
@@ -71,9 +69,7 @@ public class HomeController {
 			productToAdd.setProductCategory("Musical Instrument");
 			productToAdd.setProductCondition("New");
 			productToAdd.setProductStatus("Active");
-			
 			model.addAttribute("product", productToAdd);
-			
 			return "addProduct";
 		}
 
