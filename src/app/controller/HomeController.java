@@ -17,69 +17,60 @@ import app.model.Product;
 
 @Controller
 public class HomeController {
-	
+
 	@Autowired
 	ProductDao productDao;// = new ProductDaoImpl();
-	
+
 	@RequestMapping("/")
 	public String home() {
 		return "home";
 	}
-	
+
 	@RequestMapping("/productList")
 	public String getProducts(Model model) {
-		
 		List<Product> productList = productDao.getAllProducts();
-		
 		// When we return the view, model will be attached to view
 		model.addAttribute("products", productList);
-		
 		// name of view
 		return "productList";
 	}
-	
+
 	@RequestMapping("/productList/viewProduct/{productId}")
-	public String viewProduct(@PathVariable int productId, Model model) throws IOException{
-		
+	public String viewProduct(@PathVariable int productId, Model model) throws IOException {
 		Product product = productDao.getProductById(productId);
 		model.addAttribute("product", product);
-		
 		return "viewProduct";
 	}
-	
+
 	@RequestMapping("/admin")
 	public String adminPage() {
 		// Returning admin page view, maps to admin.jsp
 		return "admin";
 	}
-	
+
 	@RequestMapping("/admin/productInventory")
 	public String productInventory(Model model) {
 		List<Product> products = productDao.getAllProducts();
 		model.addAttribute("products", products);
 		return "productInventory";
 	}
-	
+
 	@RequestMapping("/admin/productInventory/addProduct")
-		public String addProduct(Model model) {
-		
-			Product productToAdd = new Product();
-			
-			// For default value of radiobuttons on addproduct page
-			productToAdd.setProductCategory("Musical Instrument");
-			productToAdd.setProductCondition("New");
-			productToAdd.setProductStatus("Active");
-			model.addAttribute("product", productToAdd);
-			return "addProduct";
-		}
+	public String addProduct(Model model) {
+		Product productToAdd = new Product();
+		// For default value of radiobuttons on addproduct page
+		productToAdd.setProductCategory("Musical Instrument");
+		productToAdd.setProductCondition("New");
+		productToAdd.setProductStatus("Active");
+		model.addAttribute("product", productToAdd);
+		return "addProduct";
+	}
 
 	// For adding product from addProduct.jsp
 	@RequestMapping(value = "/admin/productInventory/addProduct", method = RequestMethod.POST)
 	public String addProductPost(@ModelAttribute("product") Product product) {
-		
 		productDao.addProduct(product);
-		
-		//return "productInventory";
+		// return "productInventory";
 		return "redirect:/admin/productInventory";
 	}
 }
