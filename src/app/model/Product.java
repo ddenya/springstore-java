@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
+
+import org.springframework.web.multipart.MultipartFile;
 
 // @Entity maps instance of an object to row in tale
 @Entity
@@ -24,7 +27,7 @@ public class Product {
 	@Column(name="productCategory")
 	private String productCategory;
 	
-	@Column(name="productDescription")
+	@Column(name="productDescription",columnDefinition="TEXT")
 	private String productDescription;
 	
 	@Column(name="productPrice")
@@ -42,13 +45,13 @@ public class Product {
 	@Column(name="unitInStock")
 	private int unitInStock;
 	
+	@Lob
+	@Column(name="productImage", columnDefinition="BLOB")
+	private MultipartFile productImage;
+	
 	public int getProductId() {
 		return productId;
-	}
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
-	
+	}	
 	public String getProductName() {
 		return productName;
 	}
@@ -74,6 +77,14 @@ public class Product {
 		return productManufacturer;
 	}
 	
+	public MultipartFile getProductImage() {
+		return productImage;
+	}
+	
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+	
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
@@ -97,5 +108,9 @@ public class Product {
 	}
 	public void setProductManufacturer(String productManufacturer) {
 		this.productManufacturer = productManufacturer;
+	}
+	
+	public void setProductImage(MultipartFile productImage) {
+		this.productImage = productImage;
 	}
 }

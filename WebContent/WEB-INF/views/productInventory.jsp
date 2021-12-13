@@ -21,6 +21,7 @@
 					<th>Condition</th>
 					<th>Price</th>
 					<th></th>
+					<th></th>
 				</tr>
 			</thead>
 
@@ -34,6 +35,10 @@
 					<td><a
 						href="<spring:url value="/productList/viewProduct/${product.productId}" />">
 							<span class="glyphicon glyphicon-info-sign"></span>
+					</a></td>
+					<td><a
+						href="<spring:url value="/admin/productInventory/deleteProduct/${product.productId}" />">
+							<span class="glyphicon glyphicon-remove"></span>
 					</a></td>
 				</tr>
 			</c:forEach>

@@ -16,7 +16,7 @@
 		<!-- commandName = model  -->
 		<form:form
 			action="${pageContext.request.contextPath}/admin/productInventory/addProduct"
-			method="post" commandName="product">
+			method="post" commandName="product" enctype="multipart/form-data">
 			
 			<div class="form-group row">
 				<label for="productName" class="col-sm-1 col-form-label">Name</label>
@@ -24,13 +24,13 @@
 				<div class="col-sm-6">
 				<form:input path="productName" id="name" class="form-control" />
 				</div>
-			</div>
+			</div> 
 
 			<div class="form-group row">
 				<label for="productDescription" class="col-sm-1 col-form-label">Description</label>
 				<!--  path = attribute name of model which we are submitting -->
 				<div class="col-sm-6">
-				<form:input path="productDescription" id="description" class="form-control" />
+				<form:textarea path="productDescription" id="description" class="form-control" />
 				</div>
 			</div>
 
@@ -63,7 +63,7 @@
 				<div class="col-sm-2">
 				<label class="checkbox-inline "> <form:radiobutton path="productCategory" id="category" value="instrument"/> Instrument </label> 
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-2"> 
 				<label class="checkbox-inline"> <form:radiobutton path="productCategory" id="category" value="record"/> Record </label> 
 				</div>
 				<div class="col-sm-2">
@@ -89,6 +89,11 @@
 				<div class="col-sm-2">
 				<label class="checkbox-inline"> <form:radiobutton path="productStatus" id="status" value="hidden" /> Hidden </label>
 				</div>
+			</div>
+			
+			<div class="form-group-row">
+			<label class="control-label" for="productImage">Upload Picture</label>
+			<form:input id="productImage" path="productImage" type="file" class="form:input-large" />
 			</div>
 
 			<input type="submit" value="submit" class="btn btn-success">

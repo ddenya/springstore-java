@@ -73,4 +73,10 @@ public class HomeController {
 		// return "productInventory";
 		return "redirect:/admin/productInventory";
 	}
-}
+	
+	@RequestMapping(value = "/admin/productInventory/deleteProduct/{id}")
+		public String deleteProduct (@PathVariable int id, Model model) {
+			productDao.deleteProduct(id);
+			return "redirect:/admin/productInventory";
+		}
+ }
