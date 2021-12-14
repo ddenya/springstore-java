@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 import app.dao.ProductDao;
 import app.dao.impl.ProductDaoImpl;
@@ -70,7 +71,11 @@ public class HomeController {
 	@RequestMapping(value = "/admin/productInventory/addProduct", method = RequestMethod.POST)
 	public String addProductPost(@ModelAttribute("product") Product product) {
 		productDao.addProduct(product);
-		// return "productInventory";
+		
+		// TODO: Useless ? 
+		MultipartFile productImage = product.getProductImage();
+		
+		
 		return "redirect:/admin/productInventory";
 	}
 	

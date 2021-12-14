@@ -3,10 +3,9 @@
     
 
 <div class="text-center">
-
 	<footer>
 	<p class="text-center"><a href="#">Back to top</a></p>
-	<p>&copy; 2020 Denys, Inc. &middot;
+	<p>&copy; 2021 Denys, Inc. &middot;
 	<a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 	</footer>	
 </div>
