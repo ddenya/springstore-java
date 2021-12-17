@@ -46,7 +46,7 @@ public class Product {
 	private int unitInStock;
 	
 	@Lob
-	@Column(name="productImage", columnDefinition="BLOB")
+	@Column(name="productImage")
 	private MultipartFile productImage;
 	
 	public int getProductId() {
@@ -110,7 +110,15 @@ public class Product {
 		this.productManufacturer = productManufacturer;
 	}
 	
-	public void setProductImage(MultipartFile productImage) {
+	public void setProductImage(MultipartFile prosductImage) {
 		this.productImage = productImage;
+	}
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", productName=" + productName + ", productCategory="
+				+ productCategory + ", productDescription=" + productDescription + ", productPrice=" + productPrice
+				+ ", productCondition=" + productCondition + ", productStatus=" + productStatus
+				+ ", productManufacturer=" + productManufacturer + ", unitInStock=" + unitInStock + ", productImage="
+				+ productImage + "]";
 	}
 }

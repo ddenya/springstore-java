@@ -4,12 +4,15 @@ import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
 import app.dao.ProductDao;
@@ -68,12 +71,14 @@ public class HomeController {
 	}
 
 	// For adding product from addProduct.jsp
-	@RequestMapping(value = "/admin/productInventory/addProduct", method = RequestMethod.POST)
-	public String addProductPost(@ModelAttribute("product") Product product) {
+	@RequestMapping(value = "/admin/productInventory/addProduct", method = RequestMethod.POST, consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
+	public String addProductPost(@ModelAttribute("product") Product product, @RequestPart("image") MultipartFile productImage) {
+		product.setProductImage(productImage);
+		System.out.println("Product: " + product.toString());
 		productDao.addProduct(product);
 		
 		// TODO: Useless ? 
-		MultipartFile productImage = product.getProductImage();
+		//MultipartFile productImage = product.getProductImage();
 		
 		
 		return "redirect:/admin/productInventory";
