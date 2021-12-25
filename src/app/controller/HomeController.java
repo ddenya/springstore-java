@@ -72,7 +72,7 @@ public class HomeController {
 
 	// For adding product from addProduct.jsp
 	@RequestMapping(value = "/admin/productInventory/addProduct", method = RequestMethod.POST, consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
-	public String addProductPost(@ModelAttribute("product") Product product, @RequestPart("image") MultipartFile productImage) {
+	public String addProductPost(@ModelAttribute("product") Product product, @RequestPart("productImage") MultipartFile productImage) {
 		product.setProductImage(productImage);
 		System.out.println("Product: " + product.toString());
 		productDao.addProduct(product);
